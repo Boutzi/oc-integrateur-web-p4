@@ -1,0 +1,53 @@
+@use "../abstracts/" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-secondary;
+  background-color: $color-canvas;
+  &::-webkit-scrollbar {
+    width: $scrollbar-size;
+  }
+  &::-webkit-scrollbar-track {
+    background: $scrollbar;
+    border-radius: $border-radius-m;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb;
+    border-radius: $border-radius-m;
+  }
+}
+
+@for $i from 1 through 4 {
+  h#{$i} {
+    font-family: nth($list: $font-primary $font-secondary $font-secondary $font-secondary, $n: $i);
+    font-size: nth($list: $font-size-xl $font-size-l $font-size-m $font-size-m, $n: $i);
+    font-weight: nth($list: 300 $font-weight-bold $font-weight-light $font-weight-bold, $n: $i);
+    color: nth(
+      $list: $color-text $color-pure-inverted $color-text-medium $color-pure-inverted,
+      $n: $i
+    );
+  }
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 10px;
+  border: 1px solid $color-canvas-inverted;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid $color-selector;
+  border: 1px solid transparent;
+}
+button {
+  cursor: pointer;
+}

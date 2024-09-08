@@ -1,0 +1,30 @@
+$color-primary:#9356DC;
+$color-secondary:#FF79DA;
+$color-tertiary:#99E2D0;
+$color-pure:#ffffff;
+$color-pure-inverted:#000000;
+
+$color-canvas: #F6F6F6;
+$color-canvas-light: #EAEAEA;
+$color-canvas-dark: #353535;
+$color-canvas-inverted: #101010;
+
+$color-text: #101010;
+$color-text-medium: #353535;
+$color-text-regular: #7E7E7E;
+$color-text-inverted: #008766;
+
+$color-selector:#2a6cd7;
+$color-danger: #D93936;
+$color-success: #3BA55C;
+
+$scrollbar:#F6F6F6;
+$scrollbar-thumb:#7E7E7E;
+
+@mixin button-gradient {
+    background: rgb(147,86,220);
+    background: -moz-linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 97%);
+    background: -webkit-linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 97%);
+    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 97%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9356dc",endColorstr="#ff79da",GradientType=1);
+}

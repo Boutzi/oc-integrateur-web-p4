@@ -1,0 +1,22 @@
+@use "../abstracts/" as *;
+
+.selection {
+    width: 92%;
+    margin: 0 auto;
+    &__title {
+        margin-bottom: 35px;
+    }
+    @include media-min($breakpoint-xl) {
+        width: $width-xl;
+    }
+}
+
+.selectors {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    gap: 25px;
+    @include media-min($breakpoint-l) {
+        flex-direction: row;
+    }
+}

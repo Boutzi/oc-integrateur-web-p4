@@ -1,0 +1,123 @@
+@use "../abstracts/" as *;
+
+.restaurant-picture {
+    width: 100%;
+    &__picture {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        @include media-min($breakpoint-m) {
+            height: 383px;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 40px;
+    background: $color-pure;
+    border-top-right-radius: 40px;
+    margin-top: -50px;
+    .restaurant-menu {
+        display: flex;
+        flex-direction: column;
+        background:$color-canvas;
+        border-radius: $border-radius-xxl $border-radius-xxl 0 0;
+        padding: 30px 0;
+        align-items: center;
+        .order-link {
+            margin-top: 20px;
+        }
+        &__title {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            .like-btn {
+                margin-left: 32px;
+                @include heart($font-weight-thin, $color-pure-inverted, $font-size-l, $font-weight-bold);
+            }
+        }
+        @for $i from 1 through 3 {
+            .cat-#{$i} {
+                animation: display-menu 2s ease-in ($i * 700ms);
+            }
+        }
+        .category {
+            display: flex;
+            flex-direction: column;
+            width: 94%;
+            margin: 30px auto 0 auto;
+            opacity: 0;
+            transform-origin: top left;
+            animation-fill-mode: forwards;
+            &__title {
+                width: 40px;
+                font-size: $font-size-s;
+                border-bottom: 3px solid $color-tertiary;
+            }
+            &__item {
+                display: flex;
+                flex-direction: row;
+                background: $color-pure;
+                width: 100%;
+                min-height: 69px;
+                border-radius: $border-radius-l;
+                margin-top: 12px;
+                box-shadow: $box-shadow-xl;
+                overflow: hidden;
+                cursor: pointer;
+                .content {
+                    display: flex;
+                    padding: 12px 14px;
+                    width: 100%;
+                    flex-direction: column;
+                    white-space: nowrap; 
+                    overflow: hidden; 
+                    .name {
+                        margin-bottom: 4px;
+                        white-space: nowrap; 
+                        overflow: hidden; 
+                        text-overflow: ellipsis;
+                        max-width: calc(100% - 69px);
+                        font-size: $font-size-m;
+                    }
+                    p {
+                        min-width: 90%;
+                        white-space: nowrap; 
+                        overflow: hidden; 
+                        text-overflow: ellipsis;
+                        max-width: calc(100% - 69px);
+                        font-size: $font-size-xs;
+                    }
+                    .price {
+                        text-align: right;
+                        margin-top: -18px;
+                        font-size: $font-size-xs;
+                    }
+                }
+                .checkbox {
+                    display: flex;
+                    width: 0px;
+                    background: $color-tertiary;
+                    color: $color-pure;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: $font-size-m;
+                    transition: width 200ms ease-in-out;
+                }
+                &:hover > .checkbox {
+                    width: 69px;
+                }
+            }
+            @include media-min($breakpoint-s) {
+                width: 65%;
+            }
+        }
+        @include media-min($breakpoint-l) {
+            width: $width-xl;
+            margin: 0 auto;
+        }
+    }
+}

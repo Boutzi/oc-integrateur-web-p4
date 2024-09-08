@@ -1,0 +1,64 @@
+@use "../abstracts/" as *;
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: $font-weight-medium;
+    position: relative;
+    margin: 12.5px 0;
+    cursor: pointer;
+    &--main {
+        @include button-gradient;
+        border-radius: $border-radius-xxl;
+        padding: 15px 20px;
+        box-shadow: $box-shadow-l;
+        color: $color-pure;
+        min-width: 186px;
+        max-width: fit-content;
+        justify-content: center;
+        transition: all 200ms ease-in-out;
+        &:hover {
+            opacity: 0.85;
+            box-shadow: $box-shadow-xxl;
+        }
+    }
+    &--selection {
+        background: $color-canvas;
+        border-radius: $border-radius-xl;
+        padding: 25px 20px;
+        box-shadow: $box-shadow-xl;
+        color: $color-pure-inverted;
+        min-width: 220px;
+        width: 100%;
+        margin: 0 16px;
+        left: -12px;
+        &:hover > .btn__logo, &:hover > .btn__title {
+            color: $color-primary;
+        }
+    }
+    &__order {
+        position: absolute;
+        left: -12px;
+        color: $color-pure;
+        background: $color-primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
+    &__logo {
+        margin-left: 12px;
+        color: $color-text-medium;
+        font-weight: 500;
+        text-align: center;
+        width: 18px;
+        color: $color-text-regular;
+    }
+    &__title {
+        margin-left: 24px;
+        color: $color-text-medium;
+    }
+}

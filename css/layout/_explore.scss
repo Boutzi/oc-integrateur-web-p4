@@ -1,0 +1,22 @@
+@use "../abstracts/" as *;
+
+.explore {
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    & > * {
+        margin: 8px 0;
+    }
+    &__title {
+        font-weight: $font-weight-bold;
+    }
+    &__subtitle {
+        font-weight: $font-weight-light;
+    }
+    @include media-min($breakpoint-xl) {
+        width: 1200px;
+    }
+}

@@ -1,0 +1,39 @@
+@mixin button-gradient-inverted {
+    background: rgb(147,86,220);
+    background: -moz-linear-gradient(180deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 97%);
+    background: -webkit-linear-gradient(180deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 97%);
+    background: linear-gradient(180deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 97%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9356dc",endColorstr="#ff79da",GradientType=1);
+}
+
+@mixin media-min($_breakpoint) {
+    @media screen and (min-width: $_breakpoint) {
+        &{ @content; }
+    }
+}
+
+@mixin heart($fw-thin, $c-pure-inv, $ft-sz-l, $fw-bld) {
+    display: flex;
+    cursor: pointer;
+    & .fa-heart {
+        font-weight: $fw-thin; 
+        background: $c-pure-inv;
+        font-size: $ft-sz-l;
+        background-clip:text;
+        color: transparent;
+        transition: transform 300ms ease-in-out;
+        &:hover {
+            font-weight: $fw-bld;
+            @include button-gradient-inverted;
+            background-clip:text;
+            color: transparent;
+            transform: scale(1.1);
+        }
+    }
+    .checked .fa-heart {
+        font-weight: $fw-bld;
+        @include button-gradient-inverted;
+        background-clip:text;
+        color: transparent;
+    }
+}

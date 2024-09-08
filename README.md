@@ -1,6 +1,14 @@
-# P3
+# Project 4
 
-### GitHub
-[Suivi du rendu des projets](https://boutzi.github.io/openclassrooms/)  
+## Oh My Food
 
-[Suivi du code des projets](https://github.com/Boutzi/openclassrooms/tree/main/integrateur-web)  
+Enhance the mobile site interface with CSS animations
+
+## Installation
+
+### Clone the Repository
+```bash
+    git clone https://github.com/Boutzi/oc-integrateur-web-p4.git
+```
+### Start the project
+open **index.html** with Live Server
